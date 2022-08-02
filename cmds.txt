@@ -1,0 +1,78 @@
+sudo lshw -c video # to check the video card config recognised by the system
+
+## sudo apt install mesa-utils ## ran on 13 Nov 2020
+
+$ glxinfo -b # show the info about gpu
+
+check boot messages for more information about the graphics card driver in use:
+$ dmesg | grep -i amdgpu
+
+systemctl status snapd # check the status of snap service
+"systemctl status snapd.service" and "journalctl -xe" for details.
+
+-----------------------------------------------------------
+#to list the PATH
+$ echo $PATH
+to add a direcotry to path add the following to the end of etc/environment and etc/profile to make the Path accessible Globally and for current user session add them to .bashrc file in home/user directory
+
+export PATH="home/bin:$PATH"  #replace you desired directory path with home/bin before :
+
+after that run
+$ source ~/.bashrc
+ to load the new path to the current shell
+ to confirm run line 14 again
+ 
+ -----------------------------------------------------------
+ #show to configuration settings 
+ $ conda condif --describe
+ 
+ 
+ -----------------------------------------------------------
+ #command to update and upgrade all packages
+ $ sudo apt update && sudo apt upgrade -y
+
+#Grub menu customizer application
+$sudo apt install grub-customizer
+
+#system information tool
+$sudo apt-get install hardinfo
+
+#GNU Debugger short for gdb
+
+#apport-unpack is used to unpack a .crash file (from /var/crash directory) into a new directory
+$apport-unpack crashFile.crash newDirectoryForCrashFile
+#cd into the directory to see various crash related files
+
+------------------------------------------------------------
+
+
+apport-unpack systemGeneratedCrashReportPath.crash yourNewUnpackDirectoryHere
+
+cd yourNewUnpackDirectoryHere/
+
+gdb `cat ExecutablePath` CoreDump (pay attention to tildes here!)
+
+bt (output actual back-trace)
+
+Note: apport-unpack will sometimes crash itself on unpack operation (apport seems broken all around... xD), but your CoreDump and other files will be there, just ignore it and delete all .crash files in /var/crash after you move them elsewhere in order to allow system to output new crash reports from same apps there.
+
+------------------------------------------------------------
+
+
+#command to check about the login session
+$loginctl
+
+#command to show the session type (x11 or Wayland)
+$loginctl show-session <session-id> -p Type
+
+#show the current display manager protocol
+$echo $XDGgls_SESSION_TYPE
+
+#directory location for gdm.schemas
+/usr/share/gdm
+
+#directory location for gdm custom.conf
+/etc/gdm3/custom.conf
+
+ex
+
