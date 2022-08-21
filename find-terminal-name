@@ -1,0 +1,27 @@
+ps -aux | grep `ps -p $$ -o ppid=` | awk 'NR==1{print $NF}'
+
+ps -aux : command shows processes
+example : -
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2 164308 10600 ?        Ss   23:01   0:03 /sbin/init sp
+root           2  0.0  0.0      0     0 ?        S    23:01   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   23:01   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   23:01   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   23:01   0:00 [netns]
+root           7  0.0  0.0      0     0 ?        I<   23:01   0:00 [kworker/0:0H
+root           9  0.0  0.0      0     0 ?        I<   23:01   0:00 [kworker/0:1H
+root          10  0.0  0.0      0     0 ?        I<   23:01   0:00 [mm_percpu_wq
+root          11  0.0  0.0      0     0 ?        I    23:01   0:00 [rcu_tasks_kt
+......
+......
+......
+......
+
+grep `ps -p $$ -o ppid=` : search parent process id (ppid)
+example:
+"user-name"     6484  0.7  1.8 505800 72672 ?        Sl   23:50   0:03 /usr/bin/python3 /usr/bin/terminator
+
+awk 'NR==1{print $NF}' : awk for pattern matching , to output only the terminal name
+
+example : 
+/usr/bin/terminator
