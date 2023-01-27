@@ -1,0 +1,23 @@
+ls
+cat
+mkdir
+rmdir 
+rm
+touch
+cp
+mv
+wc
+sudo
+su
+su -
+passwd
+head
+tail
+pipe
+chmod {symbolic notations ( u - user,g - group, o - other, a - all , r - read, w - write, x - execute) 
+	example - $ chmod a=rwx file1.sh
+	example - $ chmod u+x file1.sh
+	example - $ chmod 652 file1.sh
+	example - $ chmod a-rwx file1.sh  # remove all permissions from all users
+}
+
