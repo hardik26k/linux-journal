@@ -21,3 +21,4 @@ chmod {symbolic notations ( u - user,g - group, o - other, a - all , r - read, w
 	example - $ chmod a-rwx file1.sh  # remove all permissions from all users
 }
 
+useradd
