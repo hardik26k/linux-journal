@@ -7,12 +7,12 @@ read b
 echo "enter third number"
 read c
 
-if [ $a -gt $b && $a -gt $c ]
+if [ $a -gt $b -a $a -gt $c ]
 then
-echo "First number is less than second number"
-elif [ $a -eq $b ]
+echo "First number is grestest number"
+elif [ $b -gt $a -a $b -gt $c ]
 then
-echo "second number is equal to the first number"
+echo "second number is greatest number"
 else
-echo "second number is lesses than the first number"
+echo "third number is the greatest number number"
 fi
