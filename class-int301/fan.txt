@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# wass to create a file and run date command in that in the background
+touch newFile1
+date & > newFile1
